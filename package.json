@@ -18,7 +18,8 @@
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "deploy": "pnpm run build && \"C:\\Program Files\\Git\\bin\\git.exe\" add . && \"C:\\Program Files\\Git\\bin\\git.exe\" commit -m \"Auto deploy\" && \"C:\\Program Files\\Git\\bin\\git.exe\" push"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
