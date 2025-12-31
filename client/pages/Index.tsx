@@ -8,10 +8,14 @@ import PortfolioSection from "@/components/sections/PortfolioSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 
-const Index = () => {
+type IndexProps = {
+  onOpenDrawer?: () => void;
+};
+
+const Index = ({ onOpenDrawer }: IndexProps) => {
   return (
     <SiteShell>
-      <HeroSection />
+      <HeroSection onOpenDrawer={onOpenDrawer} />
       <IntroSection />
       <ServicesSection />
       <PortfolioSection />

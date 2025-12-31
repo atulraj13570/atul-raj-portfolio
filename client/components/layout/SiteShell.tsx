@@ -1,6 +1,6 @@
 import type { MouseEvent, ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, cloneElement, isValidElement } from "react";
 import ContactDrawer from "./ContactDrawer";
 import ThemeToggle from "../ui/theme-toggle";
 
@@ -19,6 +19,8 @@ type SiteShellProps = {
 
 const SiteShell = ({ children }: SiteShellProps) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const openDrawer = () => setIsDrawerOpen(true);
 
   const handleAnchorClick = (event: MouseEvent<HTMLAnchorElement>) => {
     const target = event.currentTarget.getAttribute("data-target");
@@ -41,7 +43,7 @@ const SiteShell = ({ children }: SiteShellProps) => {
           <div className="mx-auto max-w-6xl px-6 py-4 lg:px-0">
           <div className="grid items-center gap-6 md:grid-cols-[auto_1fr_auto]">
             <button
-              onClick={() => setIsDrawerOpen(true)}
+              onClick={openDrawer}
               className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-border/60 bg-background/40 text-3xl font-display font-semibold tracking-tight text-foreground hover:bg-background/60 transition-colors"
               aria-label="Open contact drawer"
             >
@@ -99,7 +101,11 @@ const SiteShell = ({ children }: SiteShellProps) => {
           </div>
           </div>
         </header>
-        <main className="flex-1 pt-20">{children}</main>
+        <main className="flex-1 pt-20">
+          {isValidElement(children) && children.type.name === 'Index' 
+            ? cloneElement(children, { onOpenDrawer: openDrawer })
+            : children}
+        </main>
         <footer className="mx-auto w-full max-w-6xl px-6 pb-12 pt-16 text-sm text-foreground/60 lg:px-0">
           <div className="flex flex-col gap-4 border-t border-border/40 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} ATUL RAJ. All rights reserved.</p>

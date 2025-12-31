@@ -1,7 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const HeroSection = () => {
+type HeroSectionProps = {
+  onOpenDrawer?: () => void;
+};
+
+const HeroSection = ({ onOpenDrawer }: HeroSectionProps) => {
   const [displayText, setDisplayText] = useState("ENGINEERING");
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -96,11 +100,17 @@ const HeroSection = () => {
           <div className="absolute -right-10 bottom-0 h-24 w-24 rounded-full border border-accent/40" />
           <div className="absolute inset-0 rounded-[48%] bg-[radial-gradient(circle_at_top,rgba(43,194,154,0.5),transparent_60%)] blur-0" />
           <div className="absolute -inset-8 rounded-[48%] border border-foreground/10" />
-          <img
-            src="/ATUL.png"
-            alt="Portrait of ATUL RAJ"
-            className="relative z-10 w-full rounded-[3rem] object-contain"
-          />
+          <button
+            onClick={onOpenDrawer}
+            className="relative z-10 w-full rounded-[3rem] transition-transform duration-300 hover:scale-105 cursor-pointer group"
+            aria-label="Open contact drawer"
+          >
+            <img
+              src="/ATUL.png"
+              alt="Portrait of ATUL RAJ"
+              className="w-full rounded-[3rem] object-contain group-hover:shadow-2xl transition-shadow duration-300"
+            />
+          </button>
           <div className="absolute -left-8 bottom-12 h-16 w-32 rounded-full bg-primary/30 blur-xl" />
           <div className="absolute -right-6 top-12 h-24 w-24 rounded-full bg-accent/30 blur-2xl" />
           <div className="absolute -right-2 -top-6 h-32 w-32 rotate-12 rounded-[44%] border border-accent/50" />
