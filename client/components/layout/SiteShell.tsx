@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, createContext, useContext } from "react";
 import ContactDrawer from "./ContactDrawer";
 import ThemeToggle from "../ui/theme-toggle";
+import { useHoverSound } from "@/hooks/use-hover-sound";
 
 const DrawerContext = createContext<(() => void) | null>(null);
 
@@ -29,6 +30,7 @@ type SiteShellProps = {
 
 const SiteShell = ({ children }: SiteShellProps) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const playHoverSound = useHoverSound();
 
   const openDrawer = () => setIsDrawerOpen(true);
 
@@ -67,6 +69,7 @@ const SiteShell = ({ children }: SiteShellProps) => {
                     href={`#${item.href}`}
                     data-target={item.href}
                     onClick={handleAnchorClick}
+                    onMouseEnter={playHoverSound}
                     className="relative px-4 py-2 rounded-full transition-all duration-300 hover:text-foreground group overflow-hidden"
                   >
                     <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -93,6 +96,7 @@ const SiteShell = ({ children }: SiteShellProps) => {
                       href={`#${item.href}`}
                       data-target={item.href}
                       onClick={handleAnchorClick}
+                      onMouseEnter={playHoverSound}
                       className="relative px-3 py-2 rounded-full transition-all duration-300 hover:text-foreground group overflow-hidden"
                     >
                       <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
