@@ -1,11 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useDrawer } from "../layout/SiteShell";
 
-type HeroSectionProps = {
-  onOpenDrawer?: () => void;
-};
-
-const HeroSection = ({ onOpenDrawer }: HeroSectionProps) => {
+const HeroSection = () => {
+  const openDrawer = useDrawer();
   const [displayText, setDisplayText] = useState("ENGINEERING");
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -101,7 +99,7 @@ const HeroSection = ({ onOpenDrawer }: HeroSectionProps) => {
           <div className="absolute inset-0 rounded-[48%] bg-[radial-gradient(circle_at_top,rgba(43,194,154,0.5),transparent_60%)] blur-0" />
           <div className="absolute -inset-8 rounded-[48%] border border-foreground/10" />
           <button
-            onClick={onOpenDrawer}
+            onClick={openDrawer}
             className="relative z-10 w-full rounded-[3rem] transition-transform duration-300 hover:scale-105 cursor-pointer group"
             aria-label="Open contact drawer"
           >
