@@ -54,9 +54,10 @@ const SiteShell = ({ children }: SiteShellProps) => {
                   href={`#${item.href}`}
                   data-target={item.href}
                   onClick={handleAnchorClick}
-                  className="transition-colors hover:text-foreground"
+                  className="relative px-4 py-2 rounded-full transition-all duration-300 hover:text-foreground group overflow-hidden"
                 >
-                  {item.label}
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative z-10">{item.label}</span>
                 </a>
               ))}
             </nav>
@@ -79,9 +80,10 @@ const SiteShell = ({ children }: SiteShellProps) => {
                     href={`#${item.href}`}
                     data-target={item.href}
                     onClick={handleAnchorClick}
-                    className="pb-2 transition-colors hover:text-foreground"
+                    className="relative px-3 py-2 rounded-full transition-all duration-300 hover:text-foreground group overflow-hidden"
                   >
-                    {item.label}
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative z-10">{item.label}</span>
                   </a>
                 ))}
                 <a
