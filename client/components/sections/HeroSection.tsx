@@ -6,7 +6,7 @@ const HeroSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const texts = ["ENGINEERING", "FULL STACK DEVELOPER"];
+  const texts = ["MERN STACK DEVELOPER", "CYBERSECURITY ENTHUSIAST"];
 
   useEffect(() => {
     const currentText = texts[currentIndex];
@@ -48,11 +48,10 @@ const HeroSection = () => {
             ATUL RAJ
           </h1>
           <p className="mt-6 text-lg text-foreground/70">
-            Full-stack product designer crafting delightful digital products for brands that want
-            to stand out. Based in Barcelona, collaborating worldwide.
+            B.Tech ECE student and MERN Stack Developer passionate about building secure web applications and exploring cybersecurity. Based in Gaya, Bihar, India.
           </p>
           <p className="mt-4 max-w-lg text-foreground/60">
-            Need a custom experience? Let&apos;s translate your vision into interfaces people love.
+            Ready to collaborate on innovative projects? Let&apos;s build something amazing together.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
             <a
@@ -73,21 +72,21 @@ const HeroSection = () => {
           </div>
           <div className="mt-12 grid w-full max-w-lg gap-6 sm:grid-cols-3">
             <div className="rounded-3xl border border-border/60 bg-card/70 p-6 text-center shadow-[0_25px_60px_rgba(2,12,28,0.45)] backdrop-blur-sm">
-              <p className="text-3xl font-display font-semibold text-primary">8+</p>
+              <p className="text-3xl font-display font-semibold text-primary">3+</p>
               <p className="mt-2 text-xs uppercase tracking-[0.4em] text-foreground/50">
-                Years experience
+                Years coding
               </p>
             </div>
             <div className="rounded-3xl border border-border/60 bg-card/70 p-6 text-center shadow-[0_25px_60px_rgba(2,12,28,0.45)] backdrop-blur-sm">
-              <p className="text-3xl font-display font-semibold text-primary">120</p>
+              <p className="text-3xl font-display font-semibold text-primary">15+</p>
               <p className="mt-2 text-xs uppercase tracking-[0.4em] text-foreground/50">
-                Projects shipped
+                Projects built
               </p>
             </div>
             <div className="rounded-3xl border border-border/60 bg-card/70 p-6 text-center shadow-[0_25px_60px_rgba(2,12,28,0.45)] backdrop-blur-sm">
-              <p className="text-3xl font-display font-semibold text-primary">24</p>
+              <p className="text-3xl font-display font-semibold text-primary">5+</p>
               <p className="mt-2 text-xs uppercase tracking-[0.4em] text-foreground/50">
-                Happy partners
+                Technologies
               </p>
             </div>
           </div>

@@ -1,11 +1,13 @@
 const IntroSection = () => {
   const technicalSkills = [
-    "React JS",
-    "Flutter",
-    "Node.js",
+    "React.js",
+    "Node.js", 
     "MongoDB",
+    "Express.js",
+    "C++",
+    "Cybersecurity",
+    "Flutter",
     "Arduino",
-    "Python",
   ];
 
   return (
@@ -20,10 +22,10 @@ const IntroSection = () => {
               Atul Raj
             </h2>
             <p className="mt-6 max-w-xl text-lg text-foreground/70">
-              Electronics & Communication Engineering student at Muzaffarpur Institute of Technology with expertise in full-stack development and IoT solutions.
+              B.Tech ECE'26 student at MIT Muzaffarpur with expertise in MERN Stack development and growing passion for cybersecurity. Core member of GDG MIT and Senior Coordinator at MOXIE Technical Club.
             </p>
             <p className="mt-6 max-w-xl text-foreground/60">
-              Passionate about creating innovative mobile and web applications using modern technologies. Experience in React, Flutter, Node.js, and embedded systems development with Arduino and IoT platforms.
+              Passionate about building secure web applications, exploring cybersecurity concepts, and creating innovative solutions using modern technologies. Experience spans full-stack development, mobile apps, and IoT systems.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               {technicalSkills.map((item) => (
