@@ -20,7 +20,7 @@ const ContactSection = () => {
             </div>
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <a
-                href="mailto:michele@studioharrington.com"
+                href="mailto:atulraj13570@gmail.com"
                 className="inline-flex items-center rounded-full bg-primary px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-primary-foreground shadow-[0_20px_40px_rgba(39,192,147,0.25)] transition hover:bg-primary/90"
               >
                 Start a project

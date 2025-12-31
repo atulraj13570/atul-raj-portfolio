@@ -2,6 +2,7 @@ import type { MouseEvent, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ContactDrawer from "./ContactDrawer";
+import ThemeToggle from "../ui/theme-toggle";
 
 const navItems = [
   { label: "Home", href: "home" },
@@ -59,14 +60,17 @@ const SiteShell = ({ children }: SiteShellProps) => {
                 </a>
               ))}
             </nav>
-            <a
-              href="#contact"
-              data-target="contact"
-              onClick={handleAnchorClick}
-              className="hidden items-center justify-center rounded-full bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.45em] text-accent-foreground transition hover:bg-accent/80 md:inline-flex"
-            >
-              Hire Me
-            </a>
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <a
+                href="#contact"
+                data-target="contact"
+                onClick={handleAnchorClick}
+                className="hidden items-center justify-center rounded-full bg-accent px-6 py-3 text-xs font-semibold uppercase tracking-[0.45em] text-accent-foreground transition hover:bg-accent/80 md:inline-flex"
+              >
+                Hire Me
+              </a>
+            </div>
             <nav className="md:hidden md:col-span-full">
               <div className="flex items-center gap-6 overflow-x-auto whitespace-nowrap text-[0.65rem] font-semibold uppercase tracking-[0.45em] text-foreground/60">
                 {navItems.map((item) => (
@@ -99,13 +103,13 @@ const SiteShell = ({ children }: SiteShellProps) => {
             <p>© {new Date().getFullYear()} ATUL RAJ. All rights reserved.</p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="mailto:atul@example.com"
+                href="mailto:atulraj13570@gmail.com"
                 className="transition-colors hover:text-foreground"
               >
-                atul@example.com
+                atulraj13570@gmail.com
               </a>
               <a
-                href="https://linkedin.com/in/atul-raj"
+                href="https://linkedin.com/in/atulraj0109"
                 target="_blank"
                 rel="noreferrer"
                 className="transition-colors hover:text-foreground"
@@ -113,7 +117,7 @@ const SiteShell = ({ children }: SiteShellProps) => {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/atul-raj"
+                href="https://github.com/atulraj13570"
                 target="_blank"
                 rel="noreferrer"
                 className="transition-colors hover:text-foreground"
